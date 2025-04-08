@@ -8,7 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: hello world
-        run: echo "hello world"
+      - name: Code Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup requirements
+        run: pip install -r requirements.txt
+
       - name: Unit testing
         run: pytest test
